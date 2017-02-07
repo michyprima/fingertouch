@@ -1,0 +1,9 @@
+Package: it.dreamcode.ft
+Name: FingerTouch (Beta)
+Depends: mobilesubstrate
+Version: 0.0.3
+Architecture: iphoneos-arm
+Description: Touch ID gestures
+Maintainer: Michele Primavera <support@dreamcode.it>
+Author: Michele Primavera <support@dreamcode.it>
+Section: Tweaks
