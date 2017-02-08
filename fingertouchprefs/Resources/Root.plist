@@ -108,7 +108,7 @@
 			<key>max</key>
 			<real>5</real>
 			<key>segmentCount</key>
-			<real>4</real>
+			<real>8</real>
 			<key>isSegmented</key>
 			<true/>
 			<key>PostNotification</key>
