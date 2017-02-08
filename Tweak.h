@@ -74,6 +74,10 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 -(void)activateApplication:(id)arg1 ;
 @end
 
+@interface SBApplication
+-(id)bundleIdentifier;
+@end
+
 @interface SBDisplayItem : NSObject
 @property (nonatomic,copy,readonly) NSString * displayIdentifier;
 @end
@@ -135,5 +139,7 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 +(void)bringUpControlCenter;
 +(void)toggleNotificationCenter;
 @end
+
+static int (*BKSTerminateApplicationForReasonAndReportWithDescription)(NSString *displayIdentifier, int reason, int something, int something2);
 
 static void loadPreferences();

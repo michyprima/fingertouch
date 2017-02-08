@@ -202,6 +202,9 @@ static AVFlashlight *flashlight;
 			case 11:
 				[FTSettings toggleNotificationCenter];
 				break;
+			case 12:
+				[FTSettings terminateCurrentApplication];
+				break;
 		}
 	} @catch (NSException *exception) {
 #ifdef DEBUG
@@ -284,6 +287,12 @@ static AVFlashlight *flashlight;
 		[sbnc presentAnimated:YES];
 	}
 }
+
++(void)terminateCurrentApplication {
+	SBApplication *app = [[UIApplication sharedApplication] _accessibilityFrontMostApplication];
+	if(app && BKSTerminateApplicationForReasonAndReportWithDescription)
+		BKSTerminateApplicationForReasonAndReportWithDescription([app bundleIdentifier], 1, 0, 0);
+}
 @end
 
 static void loadPreferences() {
@@ -294,6 +303,10 @@ static void loadPreferences() {
 }
 
 %ctor {
+	void *bk = dlopen("/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices", RTLD_LAZY);
+	if (bk)
+		BKSTerminateApplicationForReasonAndReportWithDescription = (int (*)(NSString*, int, int, int))dlsym(bk, "BKSTerminateApplicationForReasonAndReportWithDescription");
+		
     %init;
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPreferences, CFSTR("it.dreamcode.ftp.changes"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }

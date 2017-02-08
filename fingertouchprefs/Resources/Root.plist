@@ -150,6 +150,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
+				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -166,6 +167,7 @@
 				<string>Control Center</string>
 				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
+				<string>Close current app</string>
             </array>
 		</dict>
 		<dict>
@@ -198,6 +200,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
+				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -214,6 +217,7 @@
 				<string>Control Center</string>
 				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
+				<string>Close current app</string>
             </array>
 		</dict>
 		<dict>
@@ -246,6 +250,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
+				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -262,6 +267,7 @@
 				<string>Control Center</string>
 				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
+				<string>Close current app</string>
             </array>
 		</dict>
 		<dict>
@@ -294,6 +300,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
+				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -310,6 +317,7 @@
 				<string>Control Center</string>
 				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
+				<string>Close current app</string>
             </array>
 		</dict>
 		<dict>
@@ -342,6 +350,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
+				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -358,6 +367,7 @@
 				<string>Control Center</string>
 				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
+				<string>Close current app</string>
             </array>
 		</dict>
 		<dict>
