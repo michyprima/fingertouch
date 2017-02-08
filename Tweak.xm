@@ -86,8 +86,8 @@ static BOOL reachabilityFromMe;
 	}
 }
 
--(void)setReachabilityEnabled:(BOOL)arg1 {
-	%orig(YES);
+-(BOOL)reachabilityEnabled {
+	return YES;
 }
 
 -(void)setReachabilityTemporarilyDisabled:(BOOL)arg1 forReason:(id)arg2 {
