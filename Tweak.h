@@ -123,6 +123,11 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 @property int ondoubletouch;
 @property int ontripletouch;
 @property int ontouchandhold;
+@property int ontouchlocked;
+@property int onholdlocked;
+@property int ondoubletouchlocked;
+@property int ontripletouchlocked;
+@property int ontouchandholdlocked;
 @property int maxUPs;
 -(void) loadPlist;
 +(id) sharedInstance;
@@ -132,7 +137,7 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 +(void)makeScreenshot;
 +(void)toggleSwitcher;
 +(void)simulateHomeButton;
-+(void)simulateLockButton:(BOOL)onlyIfNotLocked;
++(void)simulateLockButton;
 +(void)switchToLastApp;
 +(void)toggleFlashLight;
 +(void)toggleRotationLock;

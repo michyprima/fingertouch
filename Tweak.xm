@@ -25,9 +25,9 @@ static bool onGestureWasLocked = NO;
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, fts.dispatchTime), dispatch_get_main_queue(), ^{
 				if(downStillValid) {
 					if(touches == 0) {
-						[FTSettings executeActionForCode:(fts.onhold)];
+						[FTSettings executeActionForCode:(onGestureWasLocked ? fts.onholdlocked : fts.onhold)];
 					} else if (touches == 1 && touchAndHold) {
-						[FTSettings executeActionForCode:(fts.ontouchandhold)];
+						[FTSettings executeActionForCode:(onGestureWasLocked ? fts.ontouchandholdlocked : fts.ontouchandhold)];
 						touches = -1;
 					}
 					downStillValid--;
@@ -54,13 +54,13 @@ static bool onGestureWasLocked = NO;
 		    	if(!downStillValid) {
 		    		switch(touches) {
 		    			case 1:
-		    				[FTSettings executeActionForCode:(fts.ontouch)];
+		    				[FTSettings executeActionForCode:(onGestureWasLocked ? fts.ontouchlocked : fts.ontouch)];
 		    				break;
 		    			case 2:
-		    				[FTSettings executeActionForCode:(fts.ondoubletouch)];
+		    				[FTSettings executeActionForCode:(onGestureWasLocked ? fts.ondoubletouchlocked : fts.ondoubletouch)];
 		    				break;
 		    			case 3:
-		    				[FTSettings executeActionForCode:(fts.ontripletouch)];
+		    				[FTSettings executeActionForCode:(onGestureWasLocked ? fts.ontripletouchlocked : fts.ontripletouch)];
 		    				break;
 		    		}
 		    		touches = 0;
@@ -118,16 +118,16 @@ static AVFlashlight *flashlight;
 
 -(void) loadPlist {
 	NSDictionary* prefs = nil;
-	CFArrayRef keyList = CFPreferencesCopyKeyList(CFSTR("it.dreamcode.ftp"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+	CFArrayRef keyList = CFPreferencesCopyKeyList(CFSTR("it.dreamcode.ftp2"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
     if(keyList) {
-        prefs = (NSDictionary *)CFPreferencesCopyMultiple(keyList, CFSTR("it.dreamcode.ftp"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+        prefs = (NSDictionary *)CFPreferencesCopyMultiple(keyList, CFSTR("it.dreamcode.ftp2"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
         CFRelease(keyList);
     }
 
     if(prefs == nil) {
         self.enabled = YES;
         self.vibrate = YES;
-        self.vibrateUp = NO;
+        self.vibrateUp = YES;
         self.dispatchTime = 3 * 100000000;
         self.vibintensity = 0.3;
         self.ontouch = 1;
@@ -135,6 +135,11 @@ static AVFlashlight *flashlight;
         self.ondoubletouch = 2;
         self.ontripletouch = 3;
         self.ontouchandhold = 6;
+        self.ontouchlocked = 1;
+        self.onholdlocked = -1;
+        self.ondoubletouchlocked = -1;
+        self.ontripletouchlocked = -1;
+        self.ontouchandholdlocked = -1;
         self.maxUPs = 3;
         return;
     }
@@ -147,8 +152,13 @@ static AVFlashlight *flashlight;
     self.ontouch = ([prefs objectForKey:@"ontouch"] ? [[prefs objectForKey:@"ontouch"] intValue] : 1);
     self.onhold = ([prefs objectForKey:@"onhold"] ? [[prefs objectForKey:@"onhold"] intValue] : 0);
     self.ondoubletouch = ([prefs objectForKey:@"ondoubletouch"] ? [[prefs objectForKey:@"ondoubletouch"] intValue] : 2);
-    self.ontripletouch = ([prefs objectForKey:@"ontripletouch"] ? [[prefs objectForKey:@"ontripletouch"] intValue] : 3);
+    self.ontripletouch = ([prefs objectForKey:@"ontripletouch"] ? [[prefs objectForKey:@"ontripletouch"] intValue] : 4);
     self.ontouchandhold = ([prefs objectForKey:@"ontouchandhold"] ? [[prefs objectForKey:@"ontouchandhold"] intValue] : 6);
+    self.ontouchlocked = ([prefs objectForKey:@"ontouchlocked"] ? [[prefs objectForKey:@"ontouchlocked"] intValue] : 1);
+    self.onholdlocked = ([prefs objectForKey:@"onholdlocked"] ? [[prefs objectForKey:@"onholdlocked"] intValue] : -1);
+    self.ondoubletouchlocked = ([prefs objectForKey:@"ondoubletouchlocked"] ? [[prefs objectForKey:@"ondoubletouchlocked"] intValue] : -1);
+    self.ontripletouchlocked = ([prefs objectForKey:@"ontripletouchlocked"] ? [[prefs objectForKey:@"ontripletouchlocked"] intValue] : -1);
+    self.ontouchandholdlocked = ([prefs objectForKey:@"ontouchandholdlocked"] ? [[prefs objectForKey:@"ontouchandholdlocked"] intValue] : -1);
     
     if(self.ontripletouch != -1)
     	self.maxUPs = 3;
@@ -167,7 +177,7 @@ static AVFlashlight *flashlight;
 	@try {
 		switch(code) {
 			case 0:
-				[FTSettings simulateLockButton:NO];
+				[FTSettings simulateLockButton];
 				break;
 			case 1:
 				[FTSettings simulateHomeButton];
@@ -197,12 +207,9 @@ static AVFlashlight *flashlight;
 				[FTSettings bringUpControlCenter];
 				break;
 			case 10:
-				[FTSettings simulateLockButton:YES];
-				break;
-			case 11:
 				[FTSettings toggleNotificationCenter];
 				break;
-			case 12:
+			case 11:
 				[FTSettings terminateCurrentApplication];
 				break;
 		}
@@ -230,10 +237,9 @@ static AVFlashlight *flashlight;
 	[[UIApplication sharedApplication] _simulateHomeButtonPress];
 }
 
-+(void)simulateLockButton:(BOOL)onlyIfNotLocked {
++(void)simulateLockButton {
 	UIApplication *app = [UIApplication sharedApplication];
-	if(!onlyIfNotLocked || !onGestureWasLocked)
-		[app _simulateLockButtonPress];
+	[app _simulateLockButtonPress];
 }
 
 +(void)switchToLastApp {

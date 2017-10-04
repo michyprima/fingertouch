@@ -1,7 +1,7 @@
 Package: it.dreamcode.ft
 Name: FingerTouch
 Depends: mobilesubstrate, preferenceloader, firmware (>= 10.0)
-Version: 0.0.4
+Version: 0.0.5
 Architecture: iphoneos-arm
 Description: Touch ID gestures
 Maintainer: Michele Primavera <support@dreamcode.it>

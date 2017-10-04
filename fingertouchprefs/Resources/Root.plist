@@ -16,7 +16,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
@@ -36,7 +36,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>key</key>
 			<string>vibenabled</string>
 			<key>label</key>
@@ -48,9 +48,9 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<false/>
+			<true/>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>key</key>
 			<string>vibenabledup</string>
 			<key>label</key>
@@ -70,7 +70,7 @@
 			<key>default</key>
 			<real>3</real>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>key</key>
 			<string>vibintensity</string>
 			<key>label</key>
@@ -98,7 +98,7 @@
 			<key>default</key>
 			<real>3</real>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>key</key>
 			<string>gesturespeed</string>
 			<key>label</key>
@@ -126,7 +126,7 @@
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>default</key>
 			<integer>1</integer>
 			<key>key</key>
@@ -150,7 +150,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -165,7 +164,6 @@
 				<string>Siri</string>
 				<string>Rotation lock</string>
 				<string>Control Center</string>
-				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
 				<string>Close current app</string>
             </array>
@@ -176,7 +174,7 @@
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>default</key>
 			<integer>0</integer>
 			<key>key</key>
@@ -200,7 +198,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -215,7 +212,6 @@
 				<string>Siri</string>
 				<string>Rotation lock</string>
 				<string>Control Center</string>
-				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
 				<string>Close current app</string>
             </array>
@@ -226,7 +222,7 @@
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>default</key>
 			<integer>2</integer>
 			<key>key</key>
@@ -250,7 +246,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -265,7 +260,6 @@
 				<string>Siri</string>
 				<string>Rotation lock</string>
 				<string>Control Center</string>
-				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
 				<string>Close current app</string>
             </array>
@@ -276,9 +270,9 @@
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>default</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>key</key>
 			<string>ontripletouch</string>
 			<key>label</key>
@@ -300,7 +294,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -315,7 +308,6 @@
 				<string>Siri</string>
 				<string>Rotation lock</string>
 				<string>Control Center</string>
-				<string>Lock (Not on lockscreen)</string>
 				<string>Notification Center</string>
 				<string>Close current app</string>
             </array>
@@ -326,7 +318,7 @@
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>defaults</key>
-			<string>it.dreamcode.ftp</string>
+			<string>it.dreamcode.ftp2</string>
 			<key>default</key>
 			<integer>6</integer>
 			<key>key</key>
@@ -350,7 +342,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
             </array>
             <key>validTitles</key>
             <array>
@@ -365,7 +356,252 @@
 				<string>Siri</string>
 				<string>Rotation lock</string>
 				<string>Control Center</string>
-				<string>Lock (Not on lockscreen)</string>
+				<string>Notification Center</string>
+				<string>Close current app</string>
+            </array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Actions (Lockscreen)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>it.dreamcode.ftp2</string>
+			<key>default</key>
+			<integer>1</integer>
+			<key>key</key>
+			<string>ontouchlocked</string>
+			<key>label</key>
+			<string>Touch</string>
+			<key>PostNotification</key>
+			<string>it.dreamcode.ftp.changes</string>
+			<key>validValues</key>
+            <array>
+            	<integer>-1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+            </array>
+            <key>validTitles</key>
+            <array>
+				<string>None</string>
+				<string>Lock</string>
+				<string>Home</string>
+				<string>Switcher</string>
+				<string>Flashlight</string>
+				<string>Screenshot</string>
+				<string>Reachability</string>
+				<string>Switch to last app</string>
+				<string>Siri</string>
+				<string>Rotation lock</string>
+				<string>Control Center</string>
+				<string>Notification Center</string>
+				<string>Close current app</string>
+            </array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>it.dreamcode.ftp2</string>
+			<key>default</key>
+			<integer>-1</integer>
+			<key>key</key>
+			<string>onholdlocked</string>
+			<key>label</key>
+			<string>Hold</string>
+			<key>PostNotification</key>
+			<string>it.dreamcode.ftp.changes</string>
+			<key>validValues</key>
+            <array>
+            	<integer>-1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+            </array>
+            <key>validTitles</key>
+            <array>
+				<string>None</string>
+				<string>Lock</string>
+				<string>Home</string>
+				<string>Switcher</string>
+				<string>Flashlight</string>
+				<string>Screenshot</string>
+				<string>Reachability</string>
+				<string>Switch to last app</string>
+				<string>Siri</string>
+				<string>Rotation lock</string>
+				<string>Control Center</string>
+				<string>Notification Center</string>
+				<string>Close current app</string>
+            </array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>it.dreamcode.ftp2</string>
+			<key>default</key>
+			<integer>-1</integer>
+			<key>key</key>
+			<string>ondoubletouchlocked</string>
+			<key>label</key>
+			<string>Double Touch</string>
+			<key>PostNotification</key>
+			<string>it.dreamcode.ftp.changes</string>
+			<key>validValues</key>
+            <array>
+            	<integer>-1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+            </array>
+            <key>validTitles</key>
+            <array>
+				<string>None</string>
+				<string>Lock</string>
+				<string>Home</string>
+				<string>Switcher</string>
+				<string>Flashlight</string>
+				<string>Screenshot</string>
+				<string>Reachability</string>
+				<string>Switch to last app</string>
+				<string>Siri</string>
+				<string>Rotation lock</string>
+				<string>Control Center</string>
+				<string>Notification Center</string>
+				<string>Close current app</string>
+            </array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>it.dreamcode.ftp2</string>
+			<key>default</key>
+			<integer>-1</integer>
+			<key>key</key>
+			<string>ontripletouchlocked</string>
+			<key>label</key>
+			<string>Triple Touch</string>
+			<key>PostNotification</key>
+			<string>it.dreamcode.ftp.changes</string>
+			<key>validValues</key>
+            <array>
+            	<integer>-1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+            </array>
+            <key>validTitles</key>
+            <array>
+				<string>None</string>
+				<string>Lock</string>
+				<string>Home</string>
+				<string>Switcher</string>
+				<string>Flashlight</string>
+				<string>Screenshot</string>
+				<string>Reachability</string>
+				<string>Switch to last app</string>
+				<string>Siri</string>
+				<string>Rotation lock</string>
+				<string>Control Center</string>
+				<string>Notification Center</string>
+				<string>Close current app</string>
+            </array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>it.dreamcode.ftp2</string>
+			<key>default</key>
+			<integer>-1</integer>
+			<key>key</key>
+			<string>ontouchandholdlocked</string>
+			<key>label</key>
+			<string>Touch and Hold</string>
+			<key>PostNotification</key>
+			<string>it.dreamcode.ftp.changes</string>
+			<key>validValues</key>
+            <array>
+            	<integer>-1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+            </array>
+            <key>validTitles</key>
+            <array>
+				<string>None</string>
+				<string>Lock</string>
+				<string>Home</string>
+				<string>Switcher</string>
+				<string>Flashlight</string>
+				<string>Screenshot</string>
+				<string>Reachability</string>
+				<string>Switch to last app</string>
+				<string>Siri</string>
+				<string>Rotation lock</string>
+				<string>Control Center</string>
 				<string>Notification Center</string>
 				<string>Close current app</string>
             </array>
