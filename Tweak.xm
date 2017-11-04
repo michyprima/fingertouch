@@ -133,7 +133,7 @@ static AVFlashlight *flashlight;
         self.ontouch = 1;
         self.onhold = 0;
         self.ondoubletouch = 2;
-        self.ontripletouch = 3;
+        self.ontripletouch = 4;
         self.ontouchandhold = 6;
         self.ontouchlocked = 1;
         self.onholdlocked = -1;
