@@ -230,7 +230,10 @@ static AVFlashlight *flashlight;
 }
 
 +(void)toggleSwitcher {
-	[[%c(SBMainSwitcherViewController) sharedInstance] toggleSwitcherNoninteractively];
+	if (kCFCoreFoundationVersionNumber < 1349.56)
+		[[%c(SBMainSwitcherViewController) sharedInstance] toggleSwitcherNoninteractively];
+	else
+		[[%c(SBMainSwitcherViewController) sharedInstance] toggleSwitcherNoninteractivelyWithSource:0];
 }
 
 +(void)simulateHomeButton {
@@ -244,12 +247,23 @@ static AVFlashlight *flashlight;
 
 +(void)switchToLastApp {
 	int dest = [[UIApplication sharedApplication] _accessibilityFrontMostApplication] ? 1 : 0;
-	NSArray *displayItems = [[NSClassFromString(@"SBAppSwitcherModel") sharedInstance] valueForKey:@"_recentDisplayItems"];
-	if([displayItems count]>dest) {
-		SBDisplayItem *displayItem = displayItems[dest];
-		id appToLaunch = [[%c(SBApplicationController) sharedInstanceIfExists] applicationWithBundleIdentifier:displayItem.displayIdentifier];
-		[[%c(SBUIController) sharedInstanceIfExists] activateApplication:appToLaunch];
+	
+	if(kCFCoreFoundationVersionNumber < 1443.00) {
+		NSArray *displayItems = [[NSClassFromString(@"SBAppSwitcherModel") sharedInstance] valueForKey:@"_recentDisplayItems"];
+		if([displayItems count]>dest) {
+			SBDisplayItem *displayItem = displayItems[dest];
+			id appToLaunch = [[%c(SBApplicationController) sharedInstanceIfExists] applicationWithBundleIdentifier:displayItem.displayIdentifier];
+			[[%c(SBUIController) sharedInstanceIfExists] activateApplication:appToLaunch];
+		}
+	} else {
+		NSArray *displayItems = [[%c(SBRecentAppLayouts) sharedInstance] recents];
+		if([displayItems count]>dest) {
+			SBDisplayItem *displayItem = [displayItems[dest] allItems][0];
+			id appToLaunch = [[%c(SBApplicationController) sharedInstanceIfExists] applicationWithBundleIdentifier:displayItem.displayIdentifier];
+			[[%c(SBUIController) sharedInstanceIfExists] _activateApplicationFromAccessibility:appToLaunch];
+		}
 	}
+
 }
 
 +(void)toggleFlashLight {

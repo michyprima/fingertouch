@@ -25,6 +25,7 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 @interface SBMainSwitcherViewController
 + (SBMainSwitcherViewController *)sharedInstance;
 - (_Bool)toggleSwitcherNoninteractively;
+- (_Bool)toggleSwitcherNoninteractivelyWithSource:(long long)arg1;
 @end
 
 @interface SBReachabilityManager
@@ -72,10 +73,24 @@ FOUNDATION_EXTERN void AudioServicesPlaySystemSoundWithVibration(unsigned long, 
 @interface SBUIController
 +(id)sharedInstanceIfExists;
 -(void)activateApplication:(id)arg1 ;
+- (void)_activateApplicationFromAccessibility:(id)arg1;
 @end
 
 @interface SBApplication
 -(id)bundleIdentifier;
+@end
+
+@interface SBRecentAppLayouts
+- (id)recents;
+@end
+
+@interface SBAppLayout
+- (id)allItems;
+@end
+
+@interface SBAppSwitcherModel
++ (id)sharedInstance;
+- (SBRecentAppLayouts*)mainSwitcherAppLayouts;
 @end
 
 @interface SBDisplayItem : NSObject
